@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--配置mybatis的类型别名-->
+    <typeAliases>
+        <package name="com.team.house.entity"></package>
+    </typeAliases>
+
+   <!-- &lt;!&ndash;2.设置别名&ndash;&gt;
+    <typeAliases>
+        &lt;!&ndash;由于mybatis支持的别名中只有map没有list和set，单独配置list和set&ndash;&gt;
+        <typeAlias type="java.util.List" alias="list"/>
+        <typeAlias type="java.util.Set" alias="set"/>
+        &lt;!&ndash;配置整个pojo包下所有类的别名&ndash;&gt;
+        <package name="com.team.house.entiry"/>
+    </typeAliases>-->
+
+    <!--添加分页的插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
+<!--加载所有sql映射文件：加载持久化操作-->
+    <mappers>
+        <mapper resource="com/team/house/mapper/DistrictMapper.xml"></mapper>
+        <mapper resource="com/team/house/mapper/HouseMapper.xml"></mapper>
+        <mapper resource="com/team/house/mapper/StreetMapper.xml"></mapper>
+        <mapper resource="com/team/house/mapper/TypeMapper.xml"></mapper>
+        <mapper resource="com/team/house/mapper/UsersMapper.xml"></mapper>
+    </mappers>
+</configuration>
