@@ -33,4 +33,49 @@ public class DistricServiceImpl implements DistrictService {
         PageInfo<District> pageInfo=new PageInfo<>(list);
         return pageInfo;
     }
+
+    /**
+     * 添加区域
+     * @param district 参数区域实体类
+     * @return  返回受影响的行数
+     */
+    @Override
+    public int addDistrict(District district) {
+        return districtMapper.insertSelective(district);
+    }
+
+    /**
+     * 修改查询单条数据进行回显
+     * @param id 区域id
+     * @return 返回单条数据
+     */
+    @Override
+    public District getOneDistrict(Integer id) {
+        return districtMapper.selectByPrimaryKey(id);
+    }
+
+    /**
+     * 修改区域信息
+     * @param district 区域实体类
+     * @return 受影响的行数
+     */
+    @Override
+    public int updateDistrict(District district) {
+        return districtMapper.updateByPrimaryKeySelective(district);
+    }
+
+    /**
+     * 通过区域id删除区域
+     * @param id 区域id
+     * @return 返回受影响的行数
+     */
+    @Override
+    public int delDistrict(Integer id) {
+        return districtMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int deleteBatchDistrict(Integer[] ids) {
+        return districtMapper.deleteBatchDistrict(ids);
+    }
 }

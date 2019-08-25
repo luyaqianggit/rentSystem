@@ -99,4 +99,15 @@
     set NAME = #{name,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
+
+  <!--批量删除区域-->
+  <delete id="deleteBatchDistrict">
+    /*使用foreach构建 in关键字 如果传参是数组：collection="array"
+      如果传参是list集合：collection="list"
+    */
+    delete  from district where id in
+    <foreach collection="array" item="id" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </delete>
 </mapper>

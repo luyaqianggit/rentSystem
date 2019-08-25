@@ -1,6 +1,8 @@
 package com.team.house.service;
 
+import com.github.pagehelper.PageInfo;
 import com.team.house.entity.Street;
+import com.team.house.utils.Page;
 
 import java.util.List;
 
@@ -11,5 +13,6 @@ public interface StreetService {
      * @param did 区域id
      * @return
      */
-    public List<Street> getStreetByDid(Integer did);
+    public PageInfo<Street> getStreetByDid(Page page, Integer did);
+
 }

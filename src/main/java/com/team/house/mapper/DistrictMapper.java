@@ -18,4 +18,11 @@ public interface DistrictMapper {
     int updateByPrimaryKeySelective(District record);
 
     int updateByPrimaryKey(District record);
+
+    /**
+     * 批量删除区域
+     * @param ids 区域id
+     * @return 返回受影响的行数
+     */
+    public int deleteBatchDistrict(Integer[] ids);
 }

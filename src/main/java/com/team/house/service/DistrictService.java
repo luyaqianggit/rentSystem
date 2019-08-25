@@ -13,4 +13,39 @@ public interface DistrictService {
      */
     public PageInfo<District> getAllDistrict(Page page);
 
+    /**
+     * 添加区域信息
+     * @param district 参数区域实体类
+     * @return 返回受影响的行数
+     */
+    public int addDistrict(District district);
+
+    /**
+     * 修改通过ID查询单条进行回显
+     * @param id 区域id
+     * @return 返回单条数据 区域对象
+     */
+    public District getOneDistrict(Integer id);
+
+    /**
+     * 修改区域信息
+     * @param district 区域实体类
+     * @return 受影响的行数
+     */
+    public int updateDistrict(District district);
+
+    /**
+     * 通过区域id删除区域
+     * @param id 区域id
+     * @return 返回受影响的行数
+     */
+    public int delDistrict(Integer id);
+
+
+    /**
+     * 批量删除区域
+     * @param ids  数组区域ID
+     * @return 返回受影响的行数
+     */
+    public int deleteBatchDistrict(Integer [] ids);
 }
